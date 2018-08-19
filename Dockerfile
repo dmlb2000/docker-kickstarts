@@ -1,6 +1,6 @@
 from python
 
-COPY *.ks /var/www/html
-RUN mkdir -p /var/www/html
-WORKDIR /var/www/html
+RUN mkdir /app
+COPY *.ks /app/
+WORKDIR /app
 ENTRYPOINT ["python", "-m", "SimpleHTTPServer", "8000"]
