@@ -19,7 +19,7 @@ keyboard us
 lang en_US
 # Use network installation
 url --url=https://mirror.steadfastnet.com/fedora/releases/28/Server/x86_64/os
-repo --name=zfs --url=http://download.zfsonlinux.org/fedora/28/x86_64
+repo --name zfs --baseurl http://download.zfsonlinux.org/fedora/28/x86_64
 # Network information
 network --bootproto dhcp
 # Reboot after installation
