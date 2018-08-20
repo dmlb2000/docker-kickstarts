@@ -19,6 +19,7 @@ keyboard us
 lang en_US
 # Use network installation
 url --url=https://mirror.steadfastnet.com/fedora/releases/28/Server/x86_64/os
+repo --url=http://download.zfsonlinux.org/fedora/28/x86_64
 # Network information
 network --bootproto dhcp
 # Reboot after installation
@@ -39,5 +40,12 @@ part --asprimary --ondisk=/dev/sda --size 1 --grow /boot
 part --asprimary --ondisk=/dev/sdb --size 2048 swap
 part --asprimary --ondisk=/dev/sdb --size 1 --grow /
 
-%packages --excludedocs --nobase
+%packages --excludedocs
+docker
+zfs-release
+%end
+
+%post
+dnf -y update
+dnf -y install zfs zfs-dkms
 %end
