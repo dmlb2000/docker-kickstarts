@@ -38,3 +38,6 @@ zerombr
 part --asprimary --ondisk=/dev/sda --size 1 --grow /boot
 part --asprimary --ondisk=/dev/sdb --size 2048 swap
 part --asprimary --ondisk=/dev/sdb --size 1 --grow /
+
+%packages --excludedocs --nobase
+%end
